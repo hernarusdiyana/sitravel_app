@@ -23,10 +23,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'SiTravel',
       theme: ThemeData(
+        fontFamily: 'Poppins',
         primaryColor: AppColors.mainColor,
         accentColor: AppColors.accentColor,
         scaffoldBackgroundColor: Colors.grey.shade100,
         primarySwatch: Colors.grey,
+        textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Poppins'),
       ),
       home: SplashScreen(title: 'Si Paling Travel'),
     );
