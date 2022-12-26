@@ -5,6 +5,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sitravel_app/home/main_travel_page.dart';
 import 'package:sitravel_app/pages/register_screen.dart';
+import '../components/rounded_button.dart';
 import '../theme_helper.dart';
 import '../theme_helper.dart';
 import 'package:sitravel_app/colors.dart';
@@ -32,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -63,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 60, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        'Login into your account',
+                        'Login dengan akun Anda',
                         style: TextStyle(color: Colors.grey),
                       ),
                       SizedBox(height: 30.0),
@@ -107,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                                     // Navigator.push( context, MaterialPageRoute( builder: (context) => ForgotPasswordPage()), );
                                   },
                                   child: Text(
-                                    "Forgot your password?",
+                                    "Lupa password?",
                                     style: TextStyle(
                                       color: Colors.grey,
                                     ),
@@ -122,6 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               Container(
+                                width: size.width * 1,
                                 decoration:
                                     ThemeHelper().buttonBoxDecoration(context),
                                 child: ElevatedButton(
@@ -130,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 100),
                                     child: Text(
-                                      "Sign in",
+                                      "Login",
                                       // 'Sign In'.toUpperCase(),
                                       style: TextStyle(
                                           fontSize: 18,

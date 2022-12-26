@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:readmore/readmore.dart';
 import 'package:sitravel_app/colors.dart';
+import 'package:sitravel_app/components/rounded_button.dart';
 import 'package:sitravel_app/main.dart';
 import 'package:sitravel_app/widgets/package_card.dart';
 import 'package:sitravel_app/widgets/small_text.dart';
@@ -35,8 +36,14 @@ class _DetailPageState extends State<DetailPage> {
         ),
         actions: [],
       ),
-
-      // bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: GestureDetector(
+        child: Container(
+          color: Colors.transparent,
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: RoundedButton(
+              color: AppColors.mainColor, title: "Pesan", onPressed: () {}),
+        ),
+      ),
       backgroundColor: AppColors.lightColor,
       body: SingleChildScrollView(
         child: Column(
@@ -125,17 +132,6 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                           ],
                         ),
-                        // RichText(
-                        //   overflow: TextOverflow.ellipsis,
-                        //   maxLines: 4,
-                        //   text: const TextSpan(
-                        //       style: TextStyle(color: Colors.black45),
-                        //       text:
-                        //           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'),
-                        //   selectionRegistrar:
-                        //       SelectionContainer.maybeOf(context),
-                        //   selectionColor: Colors.black,
-                        // ),
                         ReadMoreText(
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum ',
                           style: TextStyle(
@@ -196,7 +192,7 @@ class _DetailPageState extends State<DetailPage> {
                   SizedBox(height: 10),
                   // PacakgeCard
                   Column(
-                    children: [
+                    children: <Widget>[
                       PackageCard(
                         packageName: "Premium",
                         packagePrice: 300000,
@@ -229,6 +225,89 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 10),
+                  // Info Lainnya
+                  Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          BigText(text: "Info Lainnya"),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Container(
+                        width: size.width * 1,
+                        margin: EdgeInsets.only(bottom: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColor,
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                BigText(
+                                  text: "Syarat & Ketentuan",
+                                  size: 16,
+                                ),
+                                SizedBox(width: 10),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: AppColors.mainColor,
+                                ),
+                              ],
+                            ),
+                            onTap: () {
+                              print("TAPPED!!!");
+                            },
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: size.width * 1,
+                        margin: EdgeInsets.only(bottom: 10),
+                        decoration: BoxDecoration(
+                          color: AppColors.greyColor,
+                          borderRadius: BorderRadius.circular(14.0),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(20),
+                          child: InkWell(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                BigText(
+                                  text: "FAQ",
+                                  size: 16,
+                                ),
+                                SizedBox(width: 10),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: AppColors.mainColor,
+                                ),
+                              ],
+                            ),
+                            onTap: () {
+                              print("TAPPED!!!");
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  // Column(
+                  //   children: <Widget>[
+                  //     Align(
+                  //       alignment: Alignment.bottomCenter,
+                  //       child: RoundedButton(
+                  //           color: AppColors.mainColor,
+                  //           title: "Pesan",
+                  //           onPressed: () {}),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),

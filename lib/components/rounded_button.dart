@@ -13,20 +13,24 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 16.0),
       child: Material(
         elevation: 5.0,
         color: color,
-        borderRadius: BorderRadius.circular(30.0),
+        borderRadius: BorderRadius.circular(16.0),
         child: MaterialButton(
           onPressed: onPressed(),
           //Go to login screen.
-          minWidth: 200.0,
+          minWidth: size.width * 1,
           height: 42.0,
           child: Text(
             title,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
           ),
         ),
       ),

@@ -19,27 +19,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
-  // final items = <Widget>[
-  //   Icon(
-  //     Icons.people,
-  //     size: 30,
-  //   ),
-  //   Icon(
-  //     Icons.person,
-  //     size: 30,
-  //   ),
-  //   Icon(
-  //     Icons.add,
-  //     size: 30,
-  //   ),
-  //   Icon(
-  //     Icons.search_outlined,
-  //     size: 30,
-  //   )
-  // ];
-
-  // int index = 1;
-
   @override
   Widget build(BuildContext context) {
     return Container(

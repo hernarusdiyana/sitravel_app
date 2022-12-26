@@ -4,6 +4,7 @@ import 'package:sitravel_app/event/main_event.dart';
 import 'package:sitravel_app/event/main_event.dart';
 import 'package:sitravel_app/home/travel_page_body.dart';
 import 'package:sitravel_app/pages/splash_screen.dart';
+import 'package:sitravel_app/profile/profile_page.dart';
 import 'package:sitravel_app/widgets/big_text.dart';
 
 import '../widgets/menu_card.dart';
@@ -48,9 +49,17 @@ class _MainTravelPageState extends State<MainTravelPage> {
                   color: Color.fromARGB(126, 27, 56, 122),
                   shape: BoxShape.circle,
                 ),
-                child: SvgPicture.asset(
-                  "assets/icons/user.svg",
-                  color: Colors.white,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
+                    );
+                  },
+                  child: SvgPicture.asset(
+                    "assets/icons/user.svg",
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

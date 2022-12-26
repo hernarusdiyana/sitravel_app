@@ -124,6 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -202,13 +203,14 @@ class _RegisterPageState extends State<RegisterPage> {
                               ),
                               SizedBox(height: 15.0),
                               Container(
+                                width: size.width * 1,
                                 decoration:
                                     ThemeHelper().buttonBoxDecoration(context),
                                 child: ElevatedButton(
                                   style: ThemeHelper().buttonStyle(),
                                   child: Padding(
                                     padding:
-                                        EdgeInsets.symmetric(horizontal: 110),
+                                        EdgeInsets.symmetric(horizontal: 100),
                                     child: Text(
                                       "Daftar",
                                       // 'Sign In'.toUpperCase(),

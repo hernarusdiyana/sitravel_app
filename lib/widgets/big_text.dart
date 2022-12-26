@@ -4,14 +4,16 @@ class BigText extends StatelessWidget {
   Color color;
   final String text;
   double size;
+  final weight;
   // String fontWeight;
   TextOverflow overflow;
 
   BigText({
     super.key,
-    this.color = const Color(0x001C1C1C),
+    this.color = const Color(0xFF1C1C1C),
     required this.text,
     this.size = 20,
+    this.weight = FontWeight.w500,
     // this.fontWeight,
     this.overflow = TextOverflow.ellipsis,
   });
@@ -23,7 +25,7 @@ class BigText extends StatelessWidget {
       overflow: overflow,
       style: TextStyle(
         color: color,
-        fontWeight: FontWeight.w500,
+        fontWeight: weight,
         fontFamily: 'Poppins',
         fontSize: size,
       ),
