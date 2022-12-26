@@ -6,8 +6,8 @@ import 'package:sitravel_app/widgets/big_text.dart';
 // import '../bricks/bottom_navbar.dart';
 import '../colors.dart';
 import '../widgets/bottom_navbar.dart';
-import 'package:sitravel_app/book/main_book_page.dart';
-import 'package:sitravel_app/saved/main_saved_page.dart';
+// import 'package:sitravel_app/book/main_book_page.dart';
+import 'package:sitravel_app/pages/main_saved_page.dart';
 
 class MainSavedPage extends StatefulWidget {
   const MainSavedPage({super.key});

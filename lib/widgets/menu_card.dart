@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'package:travel/constants.dart';
-// import 'event.dart';
 
 class MenuCard extends StatelessWidget {
   final String svgSrc;
@@ -21,7 +18,7 @@ class MenuCard extends StatelessWidget {
       child: Container(
         // padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Color.fromRGBO(10, 32, 84, 1),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
             BoxShadow(
@@ -32,35 +29,41 @@ class MenuCard extends StatelessWidget {
             ),
           ],
         ),
-        child: Material(
+        child: Container(
           color: Colors.transparent,
-          child: GestureDetector(
-              onTap: press(),
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: <Widget>[
-                    Spacer(),
-                  
-                    Image.asset(
-                      svgSrc,
-                      height: 70,
+          child: InkWell(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: <Widget>[
+                  Spacer(),
+                  Image.asset(
+                    svgSrc,
+                    height: 70,
+                  ),
+                  Spacer(),
+                  Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 18,
                     ),
-                    Spacer(),
-                    Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 18,
-                      ),
-                      // style: Theme.of(context).textTheme.titleLarge,
-                      // selectionColor: kTextColor,
-                    )
-                  ],
-                ),
-              )),
+                    // style: Theme.of(context).textTheme.titleLarge,
+                    // selectionColor: kTextColor,
+                  )
+                ],
+              ),
+            ),
+            onTap: (() {
+              print("Tapped!!!");
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) => new EventPage()));
+            }),
+          ),
         ),
       ),
     );
